@@ -9,7 +9,7 @@
 namespace PHP\Interfaces;
 
 
-interface Motorcycle
+interface MotorcycleInterface
 {
     public function tilt();
 

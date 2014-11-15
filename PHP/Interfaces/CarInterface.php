@@ -8,7 +8,7 @@
 
 namespace PHP\Interfaces;
 
-interface Car
+interface CarInterface
 {
     public function openDoor();
 

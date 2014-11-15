@@ -9,9 +9,9 @@
 namespace PHP\Vehicle;
 
 use PHP\Vehicle;
-use PHP\Interfaces\Car as VehicleInterface;
+use PHP\Interfaces\CarInterface;
 
-class Car extends Vehicle implements VehicleInterface
+class Car extends Vehicle implements CarInterface
 {
     protected function getFactoryMaxSpeed()
     {
@@ -20,11 +20,11 @@ class Car extends Vehicle implements VehicleInterface
 
     public function openDoor()
     {
-        // TODO: Implement openDoor() method.
+        echo __FUNCTION__;
     }
 
     public function openHood()
     {
-        // TODO: Implement closeDoor() method.
+        echo __FUNCTION__;
     }
 }

@@ -9,9 +9,9 @@
 namespace PHP\Vehicle;
 
 use PHP\Vehicle;
-use PHP\Interfaces\Motorcycle as VehicleInterface;
+use PHP\Interfaces\MotorcycleInterface;
 
-class Motorcycle extends Vehicle implements VehicleInterface
+class Motorcycle extends Vehicle implements MotorcycleInterface
 {
     protected function getFactoryMaxSpeed()
     {
@@ -20,11 +20,11 @@ class Motorcycle extends Vehicle implements VehicleInterface
 
     public function tilt()
     {
-        // TODO: Implement tilt() method.
+        echo __FUNCTION__;
     }
 
     public function putOnCenterStand()
     {
-        // TODO: Implement putOnCenterStand() method.
+        echo __FUNCTION__;
     }
 }

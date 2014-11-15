@@ -20,6 +20,8 @@ abstract class Vehicle
 
     private $maxSpeed = 0;
 
+    private $buildDate = null;
+
     abstract protected function getFactoryMaxSpeed();
 
     final public function __construct($make, $model, $color)
@@ -31,6 +33,8 @@ abstract class Vehicle
         $this->color = $color;
 
         $this->maxSpeed = $this->getFactoryMaxSpeed();
+
+        $this->buildDate = new \DateTime('now', new \DateTimeZone('Europe/Tallinn'));
 
         if ($this->maxSpeed <= 0) {
             throw new \Exception(sprintf('MaxSpeed for "%s" must be bigger than 0', get_class($this)));
@@ -68,5 +72,16 @@ abstract class Vehicle
     final public function getCurrentSpeed()
     {
         return $this->currentSpeed;
+    }
+
+    final public function getVehicleData()
+    {
+        $data = array(
+            'make' => $this->make,
+            'model' => $this->model,
+            'color' => $this->color
+        );
+
+        return $data;
     }
 }
