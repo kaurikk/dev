@@ -9,4 +9,4 @@ $bike = Factory::build(Factory::VEHICLE_MOTORCYCLE, 'BMW', 'RS1200', 'black');
 var_dump($car);
 
 
-var_dump(Factory::getVehiclesBuilt());
+echo sprintf('No of vehicles build: %s' . "\n", Factory::getNoOfVehiclesBuilt());

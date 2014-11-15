@@ -14,7 +14,7 @@ use PHP\Vehicle\Motorcycle;
 class Factory
 {
   const VEHICLE_CAR = 1;
-  
+
   const VEHICLE_MOTORCYCLE = 2;
 
   private static $vehiclesBuilt = 0;
@@ -37,7 +37,7 @@ class Factory
     return $vehicle;
   }
 
-  public static function getVehiclesBuilt()
+  public static function getNoOfVehiclesBuilt()
   {
     return self::$vehiclesBuilt;
   }
