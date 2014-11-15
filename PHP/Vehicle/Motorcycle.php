@@ -12,5 +12,8 @@ use PHP\Vehicle;
 
 class Motorcycle extends Vehicle
 {
-
-} 
+  protected function getFactoryMaxSpeed()
+  {
+    return 325;
+  }
+}
