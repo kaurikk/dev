@@ -79,7 +79,8 @@ abstract class Vehicle
         $data = array(
             'make' => $this->make,
             'model' => $this->model,
-            'color' => $this->color
+            'color' => $this->color,
+            'buildDate' => $this->buildDate
         );
 
         return $data;

@@ -1,9 +1,7 @@
 <?php
 
-spl_autoload_register('autoLoad');
-
-function autoLoad($class)
+spl_autoload_register(function ($class)
 {
     $parts = explode('\\', $class);
     require implode('/', $parts) . '.php';
-}
+});
