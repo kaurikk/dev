@@ -13,32 +13,31 @@ use PHP\Vehicle\Motorcycle;
 
 class Factory
 {
-  const VEHICLE_CAR = 1;
+    const VEHICLE_CAR = 1;
 
-  const VEHICLE_MOTORCYCLE = 2;
+    const VEHICLE_MOTORCYCLE = 2;
 
-  private static $vehiclesBuilt = 0;
+    private static $vehiclesBuilt = 0;
 
-  public static function build($type, $make, $model, $color)
-  {
-    switch ($type)
+    public static function build($type, $make, $model, $color)
     {
-      case self::VEHICLE_CAR:
-        $vehicle = new Car($make, $model, $color);
-        break;
-      case self::VEHICLE_MOTORCYCLE:
-        $vehicle = new Motorcycle($make, $model, $color);
-        break;
-      default:
-        throw new \Exception('Vehicle type not supported');
+        switch ($type) {
+            case self::VEHICLE_CAR:
+                $vehicle = new Car($make, $model, $color);
+                break;
+            case self::VEHICLE_MOTORCYCLE:
+                $vehicle = new Motorcycle($make, $model, $color);
+                break;
+            default:
+                throw new \Exception('Vehicle type not supported');
+        }
+
+        self::$vehiclesBuilt++;
+        return $vehicle;
     }
 
-    self::$vehiclesBuilt++;
-    return $vehicle;
-  }
-
-  public static function getNoOfVehiclesBuilt()
-  {
-    return self::$vehiclesBuilt;
-  }
+    public static function getNoOfVehiclesBuilt()
+    {
+        return self::$vehiclesBuilt;
+    }
 }

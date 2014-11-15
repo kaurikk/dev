@@ -10,62 +10,63 @@ namespace PHP;
 
 abstract class Vehicle
 {
-  private $make;
+    private $make;
 
-  private $model;
+    private $model;
 
-  private $color;
+    private $color;
 
-  private $currentSpeed = 0;
+    private $currentSpeed = 0;
 
-  private $maxSpeed = 0;
+    private $maxSpeed = 0;
 
-  abstract protected function getFactoryMaxSpeed();
+    abstract protected function getFactoryMaxSpeed();
 
-  final public function __construct($make, $model, $color)
-  {
-    $this->make = $make;
-
-    $this->model = $model;
-
-    $this->color = $color;
-
-    $this->maxSpeed = $this->getFactoryMaxSpeed();
-
-    if ($this->maxSpeed <= 0)
-      throw new \Exception(sprintf('MaxSpeed for "%s" must be bigger than 0', get_class($this)));
-  }
-
-  final public function accelerate($noOfUnits = 0)
-  {
-    if ($noOfUnits < 0)
-      throw new \Exception('Acceleration can not be negative');
-
-    if ($this->currentSpeed = $noOfUnits > $this->maxSpeed)
+    final public function __construct($make, $model, $color)
     {
-      trigger_error(sprintf('Maximum speed %s reached', $this->maxSpeed), E_USER_WARNING);
-      $noOfUnits = $this->maxSpeed - $this->currentSpeed;
+        $this->make = $make;
+
+        $this->model = $model;
+
+        $this->color = $color;
+
+        $this->maxSpeed = $this->getFactoryMaxSpeed();
+
+        if ($this->maxSpeed <= 0) {
+            throw new \Exception(sprintf('MaxSpeed for "%s" must be bigger than 0', get_class($this)));
+        }
     }
 
-    $this->currentSpeed += $noOfUnits;
-  }
-
-  final public function brake($noOfUnits = 0)
-  {
-    if ($noOfUnits < 0)
-      throw new \Exception('Breaking can not be negative');
-
-    if ($noOfUnits > $this->currentSpeed)
+    final public function accelerate($noOfUnits = 0)
     {
-      trigger_error('Breaking down to 0', E_USER_WARNING);
-      $noOfUnits = $this->currentSpeed;
+        if ($noOfUnits < 0) {
+            throw new \Exception('Acceleration can not be negative');
+        }
+
+        if ($this->currentSpeed = $noOfUnits > $this->maxSpeed) {
+            trigger_error(sprintf('Maximum speed %s reached', $this->maxSpeed), E_USER_WARNING);
+            $noOfUnits = $this->maxSpeed - $this->currentSpeed;
+        }
+
+        $this->currentSpeed += $noOfUnits;
     }
 
-    $this->currentSpeed -= $noOfUnits;
-  }
+    final public function brake($noOfUnits = 0)
+    {
+        if ($noOfUnits < 0) {
+            throw new \Exception('Breaking can not be negative');
+        }
 
-  final public function getCurrentSpeed()
-  {
-    return $this->currentSpeed;
-  }
+        if ($noOfUnits > $this->currentSpeed) {
+            trigger_error('Breaking down to 0', E_USER_WARNING);
+            $noOfUnits = $this->currentSpeed;
+        }
+
+        $this->currentSpeed -= $noOfUnits;
+    }
+
+    final public function getCurrentSpeed()
+    {
+        return $this->currentSpeed;
+    }
 }

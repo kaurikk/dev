@@ -11,7 +11,7 @@ namespace PHP\Interfaces;
 
 interface Motorcycle
 {
-  public function tilt();
+    public function tilt();
 
-  public function putOnCenterStand();
+    public function putOnCenterStand();
 }

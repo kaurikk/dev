@@ -13,18 +13,18 @@ use PHP\Interfaces\Motorcycle as VehicleInterface;
 
 class Motorcycle extends Vehicle implements VehicleInterface
 {
-  protected function getFactoryMaxSpeed()
-  {
-    return 325;
-  }
+    protected function getFactoryMaxSpeed()
+    {
+        return 325;
+    }
 
-  public function tilt()
-  {
-    // TODO: Implement tilt() method.
-  }
+    public function tilt()
+    {
+        // TODO: Implement tilt() method.
+    }
 
-  public function putOnCenterStand()
-  {
-    // TODO: Implement putOnCenterStand() method.
-  }
+    public function putOnCenterStand()
+    {
+        // TODO: Implement putOnCenterStand() method.
+    }
 }

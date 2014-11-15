@@ -10,7 +10,7 @@ namespace PHP\Interfaces;
 
 interface Car
 {
-  public function openDoor();
+    public function openDoor();
 
-  public function openHood();
+    public function openHood();
 }
