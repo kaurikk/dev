@@ -9,4 +9,4 @@ dev
 
 [![Code Climate](https://codeclimate.com/github/kaurikk/dev/badges/gpa.svg)](https://codeclimate.com/github/kaurikk/dev)
 
-[![Build Status](https://travis-ci.org/managlea/ResourceMapper.svg)](https://travis-ci.org/managlea/ResourceMapper)
+[![Build Status](https://travis-ci.org/managlea/Resource.svg?branch=master)](https://travis-ci.org/managlea/Resource)
